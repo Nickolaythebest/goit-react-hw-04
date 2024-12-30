@@ -1,10 +1,10 @@
 import { useState, useEffect, useMemo } from 'react'
-import ImageGallery from './Components/ImageGallery/ImageGallery.jsx'
-import SearchBar from './Components/SearchBar/SearchBar.jsx'
-import ErrorMessage from './Components/ErrorMessage/ErrorMessage.jsx'
-import Loader from './Components/Loader/Loader.jsx'
-import ImageModal from './Components/ImageModal/ImageModal.jsx'
-import LoadMoreBtn from './Components/LoadMoreBtn/LoadMoreBtn.jsx'
+import ImageGallery from './components/ImageGallery/ImageGallery.jsx'
+import SearchBar from './components/SearchBar/SearchBar.jsx'
+import ErrorMessage from './components/ErrorMessage/ErrorMessage.jsx'
+import Loader from './components/Loader/Loader.jsx'
+import ImageModal from './components/ImageModal/ImageModal.jsx'
+import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn.jsx'
 import { fetchArticlesWithTopic } from './articles-api.js';
 import './App.css'
 
