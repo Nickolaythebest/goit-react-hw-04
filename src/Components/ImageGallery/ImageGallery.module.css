@@ -1,0 +1,10 @@
+.list {
+    list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Динамічна кількість колонок */
+  gap: 10px; /* Більший відступ для кращого вигляду */
+  justify-content: center; /* Центрування елементів */
+    margin-bottom: 35px;
+}

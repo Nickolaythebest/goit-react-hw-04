@@ -1,0 +1,12 @@
+.searchInput {
+    height: 40px;
+    background-color: #fff;
+    color: black;
+    margin-right: 15px;
+}
+.container {
+    background-color: blue;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
