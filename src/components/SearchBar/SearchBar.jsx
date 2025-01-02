@@ -1,10 +1,15 @@
 import s from './SearchBar.module.css'
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 function SearchBar({onSearch}) {
   const [topic, setTopic] = useState("")
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    if(!topic.trim("")) {
+      toast.error("Please enter search term!")
+      return;
+    }
     onSearch(topic);
   }
   

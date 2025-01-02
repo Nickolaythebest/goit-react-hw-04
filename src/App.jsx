@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import ImageGallery from './components/ImageGallery/ImageGallery.jsx'
 import SearchBar from './components/SearchBar/SearchBar.jsx'
 import ErrorMessage from './components/ErrorMessage/ErrorMessage.jsx'
@@ -6,6 +6,9 @@ import Loader from './components/Loader/Loader.jsx'
 import ImageModal from './components/ImageModal/ImageModal.jsx'
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn.jsx'
 import { fetchArticlesWithTopic } from './articles-api.js';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 import './App.css'
 
 function App() {
@@ -53,16 +56,11 @@ const closeModal = () => {
 const handleChange = () => {
   setPage(prev => prev+1);
 }
-const handleSearch = useMemo(() => {
-  return (newTopic) => {
-    if(!newTopic.trim()) {
-      alert("Please enter search term!")
-      return;
-    }
+const handleSearch = useCallback((newTopic) => {
     setTopic(newTopic);
     setArticles([]);
     setPage(1)
-  }
+  
 }, []) 
 
   return (
@@ -73,6 +71,7 @@ const handleSearch = useMemo(() => {
     {articles.length > 0 && page < totalPage && <LoadMoreBtn newPage={handleChange} />}
     {isModalOpen && <ImageModal image={selectedImage} onClose={closeModal}/>}
     {err && <ErrorMessage />}
+    <ToastContainer />
     </div>
   );
 }
